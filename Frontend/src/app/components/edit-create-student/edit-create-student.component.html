@@ -1,0 +1,32 @@
+<h2 mat-dialog-title class="title">{{title}}</h2>
+<form [formGroup]="studentEntity" (ngSubmit)="onSubmit()">
+<mat-dialog-content class="mat-typography">
+        <div class="data-container">
+            <mat-form-field appearance="fill">
+                <mat-label>User Name</mat-label>
+                <input matInput formControlName="userName">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>First Name</mat-label>
+                <input matInput formControlName="firstName">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Last Name</mat-label>
+                <input matInput formControlName="lastName">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Age</mat-label>
+                <input matInput formControlName="age" type="number">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Career</mat-label>
+                <input matInput formControlName="career">
+            </mat-form-field>
+        </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button [mat-dialog-close]="true" type="submit" cdkFocusInitial [disabled]="!studentEntity.valid">{{action}}</button>
+</mat-dialog-actions>
+</form>
+

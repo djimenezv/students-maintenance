@@ -1,0 +1,11 @@
+table {
+    width: 100%;
+    .mat-column-edit, .mat-column-delete {
+        width: 5% !important;
+      }
+  }
+.right-buttom {
+    position:fixed;
+    right:20px;
+    bottom:20px;
+}

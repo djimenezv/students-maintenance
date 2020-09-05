@@ -1,0 +1,60 @@
+<table mat-table [dataSource]="students$" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="edit">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element">
+            <button mat-icon-button (click)="openEditDialog(element)"><mat-icon aria-hidden="false" aria-label="Delete Student" color="primary">edit</mat-icon></button>
+        </td>
+    </ng-container> 
+
+    <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element">
+            <button mat-icon-button (click)="openDeleteDialog(element)"><mat-icon aria-hidden="false" aria-label="Delete Student" color="accent">delete</mat-icon></button>
+        </td>            
+    </ng-container> 
+
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let element">{{element.id}} </td>
+    </ng-container>
+  
+    <!-- Login Name Column -->
+    <ng-container matColumnDef="username">
+        <th mat-header-cell *matHeaderCellDef> LOGIN NAME </th>
+        <td mat-cell *matCellDef="let element">{{element.username}} </td>
+      </ng-container>
+
+    <!-- First Name Column -->
+    <ng-container matColumnDef="firstName">
+        <th mat-header-cell *matHeaderCellDef> FIRST NAME </th>
+        <td mat-cell *matCellDef="let element">{{element.firstName}} </td>
+      </ng-container>
+
+    <!-- Last Name Column -->
+    <ng-container matColumnDef="lastName">
+        <th mat-header-cell *matHeaderCellDef> LAST NAME </th>
+        <td mat-cell *matCellDef="let element">{{element.lastName}} </td>
+      </ng-container>
+
+    <!-- Age Column -->
+    <ng-container matColumnDef="age">
+        <th mat-header-cell *matHeaderCellDef> Age </th>
+        <td mat-cell *matCellDef="let element">{{element.age}} </td>
+      </ng-container>
+  
+    <!-- Career Column -->
+    <ng-container matColumnDef="career">
+        <th mat-header-cell *matHeaderCellDef> Career </th>
+        <td mat-cell *matCellDef="let element">{{element.career}} </td>
+      </ng-container>
+    
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+<button mat-fab color="primary" class="right-buttom" (click)="openAddDialog()" >
+    <mat-icon>add</mat-icon>
+</button>
+
